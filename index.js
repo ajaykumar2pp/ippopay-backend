@@ -1,7 +1,9 @@
 require('dotenv').config()
 const express =require('express');
 const path = require('path');
+const cors = require('cors')
 const app =express();
+
 const bodyParser = require('body-parser')
 // const router =require('./routes/webRoutes')
 
@@ -28,6 +30,7 @@ app.use( bodyParser.urlencoded({ extended: true }) );
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+app.use(cors())
 
 // ***************************  Routes  *************************************//
 // app.use(router);
